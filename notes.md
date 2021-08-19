@@ -24,7 +24,7 @@
 ## Strings quotes vs backticks
 Copied from a [stackoverflow answer](https://stackoverflow.com/a/46917369).
 
-In quotes "" you need to escape new lines, tabs and other characters that do not need to be escaped in backticks \`\`. If you put a line break in a backtick string, it is interpreted as a `\n` character, see [](https://golang.org/ref/spec#String_literals)
+In quotes "" you need to escape new lines, tabs and other characters that do not need to be escaped in backticks \`\`. If you put a line break in a backtick string, it is interpreted as a `\n` character, see [golang ref string literals](https://golang.org/ref/spec#String_literals).
 
 Thus, if you say `\n` in a backtick string, it will be interpreted as the literal backslash and character n.
 
