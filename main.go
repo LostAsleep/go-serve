@@ -7,8 +7,8 @@ import (
 )
 
 func sayHello(w http.ResponseWriter, r *http.Request) {
-	ruri := fmt.Sprintf("RequestMethod: %v\n", r.Method)
-	rmet := fmt.Sprintf("RequestURI: %v\n", r.RequestURI)
+	rmet := fmt.Sprintf("RequestMethod: %v\n", r.Method)
+	ruri := fmt.Sprintf("RequestURI: %v\n", r.RequestURI)
 
 	// Print w/ timestampt to stdout
 	log.Printf(ruri)
