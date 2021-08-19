@@ -2,16 +2,21 @@ package main
 
 import (
 	"fmt"
-	"html"
 	"log"
 	"net/http"
 )
 
 func sayHello(w http.ResponseWriter, r *http.Request) {
+	ruri := fmt.Sprintf("RequestMethod: %v\n", r.Method)
+	rmet := fmt.Sprintf("RequestURI: %v\n", r.RequestURI)
+
 	// Print w/ timestampt to stdout
-	log.Printf("I see you used Method %q\n", r.Method)
+	log.Printf(ruri)
+	log.Printf(rmet)
+
 	//Print to the browser (on served site)
-	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+	// fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+	fmt.Fprintf(w, ruri)
 
 	//println("Someone just accessed the server.")
 	//fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
