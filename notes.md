@@ -3,7 +3,7 @@
 ## Printing Stuff
 
 * `fmt.Print` - Just print stuff
-* `fmt.Fprintf` - Print to a file handler in a formated way
+* `fmt.Fprintf` - Print to a io.writer / file descriptor in a formated way
 * `fmt.Printf` - Print in a formated way (don't forget that you need line returns)
    * `fmt.Printf("Hello %v\n", "Someone")`
    * If you use `%q` instead of `%v` it will be shown quoted
@@ -21,5 +21,10 @@
 * inside a function you can use the walrus operator `:=` to do both at the same time: `varname := value`
 
 
+## Strings quotes vs backticks
+Copied from a [stackoverflow answer](https://stackoverflow.com/a/46917369).
 
+In quotes "" you need to escape new lines, tabs and other characters that do not need to be escaped in backticks \`\`. If you put a line break in a backtick string, it is interpreted as a `\n` character, see [](https://golang.org/ref/spec#String_literals)
+
+Thus, if you say `\n` in a backtick string, it will be interpreted as the literal backslash and character n.
 
