@@ -8,7 +8,8 @@ import (
 )
 
 func sayHello(w http.ResponseWriter, r *http.Request) {
-	log.Println("Ouch.") // Print w/ timestampt to stdout
+	// Print w/ timestampt to stdout
+	log.Printf("I see you used Method %q\n", r.Method)
 	//Print to the browser (on served site)
 	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 
