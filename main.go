@@ -37,6 +37,7 @@ func serveFile(w http.ResponseWriter, r *http.Request) {
 	// GetWD and Join used to create a safe absolute path to serve.
 	// For some reason this will also make the logo.png work.
 	// With (w, r, ".") the logo.png would not show up.
+	// Also filepath.Join() cleans directly cleans the path. Convenient.
 	http.ServeFile(w, r, filepath.Join(wd, r.URL.Path))
 }
 
