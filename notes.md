@@ -20,7 +20,7 @@
 * inside a function you can use the walrus operator `:=` to do both at the same time: `varname := value`
 
 
-## Strings quotes vs backticks
+## String quotes vs backticks
 Copied from a [stackoverflow answer](https://stackoverflow.com/a/46917369).
 
 In quotes "" you need to escape new lines, tabs and other characters that do not need to be escaped in backticks \`\`. If you put a line break in a backtick string, it is interpreted as a `\n` character, see [golang ref string literals](https://golang.org/ref/spec#String_literals).
@@ -32,7 +32,7 @@ Thus, if you say `\n` in a backtick string, it will be interpreted as the litera
 * Serving a file:
 `ServeFile(w, r, name)` - https://pkg.go.dev/net/http#ServeFile
    * You should not link directly to an `index.html` file. It makes longer URLs. You can't dynamically link stuff.
+   * If you use `r.URL.Path` as the `name` you will expose your root directory!
 
 * `ServeTLS(l, handler, certFile, keyFile)` - https://pkg.go.dev/net/http#ServeTLS
-
 
