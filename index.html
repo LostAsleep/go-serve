@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>notes</title>
+</head>
+<body><h1 id='notes-while-coding'>Notes while Coding</h1>
+<h2 id='printing-stuff'>Printing Stuff</h2>
+<ul>
+<li><p><code>fmt.Print</code> - Just print stuff</p>
+</li>
+<li><p><code>fmt.Fprintf</code> - Print to a io.writer / file descriptor in a formated way</p>
+</li>
+<li><p><code>fmt.Printf</code> - Print in a formated way (don&#39;t forget that you need line returns)</p>
+<ul>
+<li><code>fmt.Printf(&quot;Hello %v\n&quot;, &quot;Someone&quot;)</code></li>
+<li>If you use <code>%q</code> instead of <code>%v</code> it will be shown quoted</li>
+
+</ul>
+</li>
+<li><p><code>fmt.Println</code> - Print with a line return at the end</p>
+</li>
+<li><p><code>fmt.Sprintf</code> - Like Printf, but returns a string you can use</p>
+</li>
+
+</ul>
+<hr />
+<ul>
+<li><code>log.Println</code> - Print with line returns and prepended timestamps</li>
+
+</ul>
+<h2 id='variables'>Variables</h2>
+<ul>
+<li>declare <code>var varname type</code></li>
+<li>and the adding a value of the correct <code>type</code> via <code>varname = value</code></li>
+<li>inside a function you can use the walrus operator <code>:=</code> to do both at the same time: <code>varname := value</code></li>
+
+</ul>
+<h2 id='strings-quotes-vs-backticks'>Strings quotes vs backticks</h2>
+<p>Copied from a <a href='https://stackoverflow.com/a/46917369'>stackoverflow answer</a>.</p>
+<p>In quotes &quot;&quot; you need to escape new lines, tabs and other characters that do not need to be escaped in backticks ``. If you put a line break in a backtick string, it is interpreted as a <code>\n</code> character, see <a href='https://golang.org/ref/spec#String_literals'>golang ref string literals</a>.</p>
+<p>Thus, if you say <code>\n</code> in a backtick string, it will be interpreted as the literal backslash and character n.</p>
+<h2 id='serving-stuff-with-the-nethttp-server'>Serving stuff with the net/http server</h2>
+<ul>
+<li><p>Serving a file:
+<code>ServeFile(w, r, name)</code> - <a href='https://pkg.go.dev/net/http#ServeFile' target='_blank' class='url'>https://pkg.go.dev/net/http#ServeFile</a></p>
+<ul>
+<li>You should not link directly to an <code>index.html</code> file. It makes longer URLs. You can&#39;t dynamically link stuff.</li>
+
+</ul>
+</li>
+<li><p><code>ServeTLS(l, handler, certFile, keyFile)</code> - <a href='https://pkg.go.dev/net/http#ServeTLS' target='_blank' class='url'>https://pkg.go.dev/net/http#ServeTLS</a></p>
+</li>
+
+</ul>
+<p>&nbsp;</p>
+</body>
+</html>
