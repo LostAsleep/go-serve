@@ -13,7 +13,7 @@ Form:       %v
     some:   %v
 `
 
-func reflectForm(w http.ResponseWriter, r *http.Request) {
+func serveForm(w http.ResponseWriter, r *http.Request) {
 	// PostForm is only available after ParseForm is called.
 	r.ParseForm()
 	fmt.Fprintf(w, fmt.Sprintf(tpl, // Print to browser
@@ -29,7 +29,7 @@ func some(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", reflectForm)
+	http.HandleFunc("/", serveForm)
 	http.HandleFunc("/some", some)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
