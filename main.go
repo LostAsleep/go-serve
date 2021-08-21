@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"path/filepath"
 )
 
 const tpl = `
@@ -34,11 +33,11 @@ func serveFile(w http.ResponseWriter, r *http.Request) {
 		log.Print(err)
 		return
 	}
-	// GetWD and Join used to create a safe absolute path to serve.
+	// Use wd+r.URL.Path to create a safe absolute path to serve.
 	// For some reason this will also make the logo.png work.
 	// With (w, r, ".") the logo.png would not show up.
-	// Also filepath.Join() cleans directly cleans the path. Convenient.
-	http.ServeFile(w, r, filepath.Join(wd, r.URL.Path))
+	// ServeFile() also calls Clean on the path. So no Join() is needed.
+	http.ServeFile(w, r, wd+r.URL.Path)
 }
 
 func main() {
