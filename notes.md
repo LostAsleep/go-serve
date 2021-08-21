@@ -8,9 +8,6 @@
    * If you use `%q` instead of `%v` it will be shown quoted
 * `fmt.Println` - Print with a line return at the end
 * `fmt.Sprintf` - Like Printf, but returns a string you can use
-
-----
-
 * `log.Println` - Print with line returns and prepended timestamps
 
 
@@ -35,4 +32,13 @@ Thus, if you say `\n` in a backtick string, it will be interpreted as the litera
    * If you use `r.URL.Path` as the `name` you will expose your root directory!
 
 * `ServeTLS(l, handler, certFile, keyFile)` - https://pkg.go.dev/net/http#ServeTLS
+
+## path/filepath package
+* `filepath.Abs()` - Abs returns an absolute representation of path.
+* `filepath.Join(elem ...string) string` - Join joins any number of path elements into a single path.
+
+
+## os package
+* `of.Getwd()` - Returns the working directory
+
 
